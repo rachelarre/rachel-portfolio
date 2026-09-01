@@ -187,18 +187,6 @@
   .talk-row .when{ font-size:13px; color:var(--ink-faint); }
   .talk-row .where{ color:var(--ink-soft); }
 
-  .pub{ padding:16px 0; border-top:1px solid var(--line); }
-  .pub:first-child{ border-top:none; padding-top:0; }
-  .pub .venue{ font-size:12px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px; }
-  .pub .title{ font-size:15px; font-weight:500; }
-  .pub .title a{ text-decoration:none; }
-  .pub .title a:hover{ text-decoration:underline; }
-
-  .edu-row{ display:flex; justify-content:space-between; gap:20px; }
-  .edu-row .school{ font-weight:600; font-size:15px; }
-  .edu-row .degree{ color:var(--ink-soft); font-size:14.5px; margin-top:2px; }
-  .edu-row .when{ font-family:inherit; font-size:13px; color:var(--ink-faint); white-space:nowrap; }
-
   /* ---- mobile topbar + menu ---- */
   .mobile-topbar{
     display:none;
@@ -264,7 +252,6 @@
     header.masthead img{ width:56px; height:56px; }
     header.masthead h1{ font-size:17.5px; }
     .row, .talk-row{ grid-template-columns:1fr; gap:4px; }
-    .edu-row{ flex-direction:column; gap:4px; }
   }
 </style>
 
@@ -276,7 +263,7 @@
 </header>
 <nav class="mobile-menu" id="mobile-menu" aria-label="Section index (mobile)">
   <a href="#about" data-section="about">About</a>
-  <a href="#experience" data-section="experience">Work Experience</a>
+  <a href="#experience" data-section="experience">Experience</a>
   <a href="#education" data-section="education">Education</a>
   <a href="#writing" data-section="writing">Writing</a>
   <a href="#publications" data-section="publications">Publications</a>
@@ -287,7 +274,7 @@
 <div class="shell">
   <nav class="rail" aria-label="Section index">
     <a href="#about" data-section="about">About</a>
-    <a href="#experience" data-section="experience">Work Experience</a>
+    <a href="#experience" data-section="experience">Experience</a>
     <a href="#education" data-section="education">Education</a>
     <a href="#writing" data-section="writing">Writing</a>
     <a href="#publications" data-section="publications">Publications</a>
@@ -312,7 +299,7 @@
     </section>
 
     <section id="experience">
-      <div class="label">Work Experience</div>
+      <div class="label">Experience</div>
 
       <div class="row">
         <div class="when">2026 &mdash; Now<span class="place">San Francisco</span></div>
@@ -362,37 +349,25 @@
 
     <section id="education">
       <div class="label">Education</div>
-      <div class="edu-row">
-        <div>
-          <div class="school">Master of Human-Computer Interaction</div>
-          <div class="degree">Carnegie Mellon University</div>
+      <div class="row">
+        <div class="when">2020 &mdash; 2021<span class="place">Pittsburgh, PA</span></div>
+        <div class="what">
+          <div class="role">Master of Human-Computer Interaction</div>
+          <div class="org">Carnegie Mellon University</div>
         </div>
-        <div class="when">2020 &mdash; 2021 &middot; Pittsburgh, PA</div>
       </div>
     </section>
 
     <section id="writing">
       <div class="label">Writing</div>
-      <div class="pub">
-        <div class="venue">Essay</div>
-        <div class="title"><a href="writing/design-ethos-and-values.html">Design Ethos &amp; Values</a></div>
-      </div>
+      <div class="talk-row"><div class="when"></div><div class="where"><a href="writing/design-ethos-and-values.html">Design Ethos &amp; Values</a> &mdash; Essay</div></div>
     </section>
 
     <section id="publications">
       <div class="label">Publications</div>
-      <div class="pub">
-        <div class="venue">Creativity &amp; Cognition 2022 &middot; Pictorial</div>
-        <div class="title"><a href="https://arxiv.org/abs/2201.12200" target="_blank" rel="noopener">Blue Ceramics: Co-designing Morphing Ceramics for Seagrass Meadow Restoration</a></div>
-      </div>
-      <div class="pub">
-        <div class="venue">CHI 2021 &middot; Late-Breaking Work</div>
-        <div class="title"><a href="https://dl.acm.org/doi/10.1145/3491101.3519798" target="_blank" rel="noopener">Memory Portal: Investigating Data Meaning-making through Spatio-temporal Experiences</a></div>
-      </div>
-      <div class="pub">
-        <div class="venue">IASDR 2021 &middot; Late-Breaking Work</div>
-        <div class="title"><a href="https://link.springer.com/chapter/10.1007/978-981-19-4472-7_244" target="_blank" rel="noopener">Envisioning New Futuring Models: Past, Plurality, and Positionality</a></div>
-      </div>
+      <div class="talk-row"><div class="when">2022</div><div class="where"><a href="https://arxiv.org/abs/2201.12200" target="_blank" rel="noopener">Blue Ceramics: Co-designing Morphing Ceramics for Seagrass Meadow Restoration</a> &mdash; Creativity &amp; Cognition, Pictorial</div></div>
+      <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://dl.acm.org/doi/10.1145/3491101.3519798" target="_blank" rel="noopener">Memory Portal: Investigating Data Meaning-making through Spatio-temporal Experiences</a> &mdash; CHI, Late-Breaking Work</div></div>
+      <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://link.springer.com/chapter/10.1007/978-981-19-4472-7_244" target="_blank" rel="noopener">Envisioning New Futuring Models: Past, Plurality, and Positionality</a> &mdash; IASDR, Late-Breaking Work</div></div>
     </section>
 
     <section id="speaking">

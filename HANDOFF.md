@@ -12,7 +12,7 @@ Fonts: Inter (Google Fonts). Palette: near-black ink on white, minimal greys —
 
 ## Immediate next steps (in progress when this was handed off)
 
-1. **Create a GitHub repo** for this project (Rachel has a GitHub account) and push this existing git history to it — don't start a fresh repo, this one already has the real commit history of every design decision.
+1. ~~**Create a GitHub repo**~~ — Done. Repo is https://github.com/rachelarre/rachel-portfolio (public), existing git history pushed intact, default branch renamed `master` → `main` to match GitHub's current convention.
 2. **Connect Netlify** (Rachel has a Netlify account) and deploy the site from that GitHub repo, so pushes to `main` auto-deploy.
 3. **Point rachelarre.com at Netlify.** The domain is currently on Flywheel/WordPress. Rachel confirmed she wants to fully replace the WordPress site (not run them side by side) and manage DNS through Flywheel's DNS settings, pointing to Netlify.
 4. Once both pages are hosted together under one domain, the relative link from the Writing section to `writing/design-ethos-and-values.html` (and the "back" link from that page to `../index.html`) will resolve correctly — right now, as two separate published previews, they don't link to each other. This is expected and not a bug.

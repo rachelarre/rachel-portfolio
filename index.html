@@ -47,6 +47,7 @@
   }
   a{ color:var(--link); }
 
+  /* ---- desktop shell ---- */
   .shell{
     max-width:1280px;
     margin:0 auto;
@@ -55,10 +56,6 @@
     grid-template-columns:1fr 3fr;
     gap:48px;
     align-items:start;
-  }
-  @media (max-width:920px){
-    .shell{ grid-template-columns:1fr; gap:0; }
-    .rail{ display:none; }
   }
 
   .rail{
@@ -69,7 +66,7 @@
     flex-direction:column;
     gap:2px;
   }
-  .rail a{
+  nav a{
     display:flex;
     align-items:center;
     gap:10px;
@@ -88,8 +85,8 @@
     flex:none;
     transition:all .15s ease;
   }
-  .rail a:hover{ color:var(--ink); }
-  .rail a.active{
+  nav a:hover{ color:var(--ink); }
+  nav a.active{
     color:var(--ink);
     font-weight:600;
   }
@@ -98,7 +95,7 @@
     height:2px;
     background:var(--ink);
   }
-  .rail .theme-toggle{
+  .theme-toggle{
     margin-top:28px;
     align-self:flex-start;
     font-family:inherit;
@@ -110,7 +107,7 @@
     padding:6px 14px;
     cursor:pointer;
   }
-  .rail .theme-toggle:hover{ color:var(--ink); }
+  .theme-toggle:hover{ color:var(--ink); }
 
   main{ min-width:0; max-width:660px; padding:88px 0 140px; }
 
@@ -140,7 +137,7 @@
     max-width:38ch;
   }
 
-  section{ margin-bottom:64px; scroll-margin-top:32px; }
+  section{ margin-bottom:64px; scroll-margin-top:88px; }
   section:last-of-type{ margin-bottom:0; }
 
   .label{
@@ -160,38 +157,6 @@
   #about p:last-child{ margin-bottom:0; }
   #about a{ text-decoration-color:var(--line); }
 
-  .ethos-intro{ color:var(--ink-soft); max-width:56ch; margin:0 0 14px; }
-  .principle{ margin-top:26px; padding-top:26px; border-top:1px solid var(--line); }
-  .principle:first-of-type{ margin-top:32px; }
-  .principle .num{
-    font-size:11.5px;
-    color:var(--ink-faint);
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    margin-bottom:4px;
-  }
-  .principle h3{
-    font-size:15.5px;
-    font-weight:600;
-    margin:0 0 8px;
-  }
-  .principle p{ color:var(--ink-soft); max-width:54ch; margin:0 0 10px; }
-  .principle blockquote{
-    margin:10px 0 0;
-    padding-left:14px;
-    border-left:2px solid var(--line);
-    font-size:14px;
-    color:var(--ink-faint);
-    font-style:italic;
-    max-width:52ch;
-  }
-  .principle blockquote cite{
-    display:block;
-    margin-top:6px;
-    font-style:normal;
-    font-size:12.5px;
-  }
-
   .row{
     display:grid;
     grid-template-columns:92px 1fr;
@@ -200,9 +165,6 @@
     border-top:1px solid var(--line);
   }
   .row:first-child{ border-top:none; padding-top:0; }
-  @media (max-width:480px){
-    .row{ grid-template-columns:1fr; gap:4px; }
-  }
   .row .when{
     font-size:13px;
     color:var(--ink-faint);
@@ -222,7 +184,6 @@
     font-size:14.5px;
   }
   .talk-row:first-child{ border-top:none; padding-top:0; }
-  @media (max-width:480px){ .talk-row{ grid-template-columns:1fr; gap:2px; } }
   .talk-row .when{ font-size:13px; color:var(--ink-faint); }
   .talk-row .where{ color:var(--ink-soft); }
 
@@ -234,11 +195,129 @@
   .pub .title a:hover{ text-decoration:underline; }
 
   .edu-row{ display:flex; justify-content:space-between; gap:20px; }
-  @media (max-width:480px){ .edu-row{ flex-direction:column; gap:4px; } }
   .edu-row .school{ font-weight:600; font-size:15px; }
   .edu-row .degree{ color:var(--ink-soft); font-size:14.5px; margin-top:2px; }
   .edu-row .when{ font-family:inherit; font-size:13px; color:var(--ink-faint); white-space:nowrap; }
+
+  .post-card{
+    display:block;
+    padding:22px 22px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    text-decoration:none;
+    color:inherit;
+    transition:border-color .15s ease;
+  }
+  .post-card:hover{ border-color:var(--ink-faint); }
+  .post-card .post-eyebrow{
+    font-size:11.5px;
+    color:var(--ink-faint);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:8px;
+  }
+  .post-card .post-title{
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .post-card .post-dek{
+    font-size:14px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin-bottom:12px;
+  }
+  .post-card .post-read{
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink);
+  }
+
+  /* ---- mobile topbar + menu ---- */
+  .mobile-topbar{
+    display:none;
+    position:sticky;
+    top:0;
+    z-index:20;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-topbar .mobile-name{ font-size:15px; font-weight:600; }
+  .mobile-menu-btn{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:4px;
+    width:32px; height:32px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
+  }
+  .mobile-menu-btn span{
+    display:block;
+    height:2px;
+    background:var(--ink);
+    border-radius:1px;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .mobile-menu-btn[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+  .mobile-menu{
+    display:none;
+    position:sticky;
+    top:65px;
+    z-index:19;
+    flex-direction:column;
+    gap:2px;
+    padding:8px 20px 16px;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{ display:flex; }
+  .mobile-menu a{ padding:10px 0; }
+  .mobile-menu a::before{ display:none; }
+  .mobile-menu .theme-toggle{ margin-top:10px; align-self:flex-start; }
+
+  /* ---- responsive ---- */
+  @media (max-width:920px){
+    .shell{ grid-template-columns:1fr; gap:0; padding:0; }
+    .rail{ display:none; }
+    .mobile-topbar{ display:flex; }
+    main{ max-width:none; padding:40px 20px 100px; }
+    header.masthead{ margin-bottom:28px; }
+    section{ margin-bottom:48px; scroll-margin-top:120px; }
+  }
+  @media (max-width:560px){
+    main{ padding:32px 16px 80px; }
+    header.masthead img{ width:56px; height:56px; }
+    header.masthead h1{ font-size:17.5px; }
+    .row, .talk-row{ grid-template-columns:1fr; gap:4px; }
+    .edu-row{ flex-direction:column; gap:4px; }
+    .post-card{ padding:18px; }
+  }
 </style>
+
+<header class="mobile-topbar">
+  <span class="mobile-name">Rachel Arredondo</span>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Section index (mobile)">
+  <a href="#about" data-section="about">About</a>
+  <a href="#experience" data-section="experience">Work Experience</a>
+  <a href="#education" data-section="education">Education</a>
+  <a href="#writing" data-section="writing">Writing</a>
+  <a href="#publications" data-section="publications">Publications</a>
+  <a href="#speaking" data-section="speaking">Speaking</a>
+  <button class="theme-toggle" type="button">Dark mode</button>
+</nav>
 
 <div class="shell">
   <nav class="rail" aria-label="Section index">
@@ -248,7 +327,7 @@
     <a href="#writing" data-section="writing">Writing</a>
     <a href="#publications" data-section="publications">Publications</a>
     <a href="#speaking" data-section="speaking">Speaking</a>
-    <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+    <button class="theme-toggle" type="button">Dark mode</button>
   </nav>
 
   <main>
@@ -329,29 +408,12 @@
 
     <section id="writing">
       <div class="label">Writing</div>
-      <p class="ethos-intro">Designers are conduits to power. We are translators between how things are and how they could be. As a systems thinker, I thrive in diving into the ambiguity, finding the patterns, and understanding how they all connect to design more equitable outcomes for all stakeholders.</p>
-      <p class="ethos-intro">My design ethos weaves these values with wisdom I've gathered from my favorite writers and thinkers.</p>
-
-      <div class="principle">
-        <div class="num">Principle 01</div>
-        <h3>Design for Ethical Disruption</h3>
-        <p>I will use my skills as a designer to contribute to the larger conversation around bettering the tools and products we use for living, connecting, and simply being human.</p>
-        <blockquote>"Our task is to make trouble, to stir up potent response to devastating events, as well as to settle troubled waters and rebuild quiet places."<cite>&mdash; Donna J. Haraway, <em>Staying with the Trouble</em></cite></blockquote>
-      </div>
-
-      <div class="principle">
-        <div class="num">Principle 02</div>
-        <h3>Scope Through Emergence</h3>
-        <p>I will pay deep attention to the details of what is being considered and what is being left out, and who holds the power. When unfolding a problem, I create opportunities to experiment, play, and create space so the solution draws on past wisdom for better futures.</p>
-        <blockquote>"To apply natural order and our love of life to the way we create the world. To tap into the most ancient systems and patterns for wisdom as we build tomorrow."<cite>&mdash; Adrienne Marie Brown, <em>Emergent Strategy</em></cite></blockquote>
-      </div>
-
-      <div class="principle">
-        <div class="num">Principle 03</div>
-        <h3>Beauty Through Utility</h3>
-        <p>I weave beauty into the functionality as part of creating accessible, equitable design. I measure success by how the outcome fits seamlessly into the context of everyday life.</p>
-        <blockquote>"When the objects we use every day and the surroundings we live in have become in themselves a work of art, then we shall be able to say that we have achieved a balanced life."<cite>&mdash; Bruno Munari, <em>Design as Art</em></cite></blockquote>
-      </div>
+      <a class="post-card" href="writing/design-ethos-and-values.html">
+        <div class="post-eyebrow">Essay</div>
+        <div class="post-title">Design Ethos &amp; Values</div>
+        <div class="post-dek">Three principles I design by, and the writers &mdash; Haraway, Brown, Munari &mdash; who shaped them.</div>
+        <div class="post-read">Read &rarr;</div>
+      </a>
     </section>
 
     <section id="publications">
@@ -385,31 +447,50 @@
 <script>
 (function(){
   var root = document.documentElement;
-  var btn = document.getElementById('theme-toggle');
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.theme-toggle'));
   function systemTheme(){
     return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
   }
   function updateLabel(){
     var explicit = root.getAttribute('data-theme');
     var effective = explicit || systemTheme();
-    btn.textContent = effective === 'dark' ? 'Light mode' : 'Dark mode';
+    var label = effective === 'dark' ? 'Light mode' : 'Dark mode';
+    buttons.forEach(function(b){ b.textContent = label; });
   }
   var stored = null;
   try { stored = localStorage.getItem('rachel-theme'); } catch(e) {}
   if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
   updateLabel();
-  btn.addEventListener('click', function(){
-    var current = root.getAttribute('data-theme') || systemTheme();
-    var next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('rachel-theme', next); } catch(e) {}
-    updateLabel();
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme') || systemTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('rachel-theme', next); } catch(e) {}
+      updateLabel();
+    });
   });
 })();
 
 (function(){
-  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[data-section]'));
-  var sections = links.map(function(a){ return document.getElementById(a.getAttribute('data-section')); });
+  var menuBtn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  Array.prototype.slice.call(menu.querySelectorAll('a')).forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a[data-section]'));
+  var ids = Array.prototype.slice.call(document.querySelectorAll('.rail a[data-section]')).map(function(a){ return a.getAttribute('data-section'); });
+  var sections = ids.map(function(id){ return document.getElementById(id); });
   function setActive(id){
     links.forEach(function(a){
       a.classList.toggle('active', a.getAttribute('data-section') === id);

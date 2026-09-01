@@ -170,22 +170,9 @@
     color:var(--ink-faint);
     padding-top:1px;
   }
-  .row .when .place, .talk-row .when .place{ display:block; margin-top:2px; color:var(--ink-faint); }
   .row .what .role{ font-weight:600; font-size:15px; }
   .row .what .org{ color:var(--ink-soft); font-size:14.5px; margin-top:1px; }
   .row .what .blurb{ color:var(--ink-soft); font-size:14.5px; margin-top:8px; max-width:46ch; }
-
-  .talk-row{
-    display:grid;
-    grid-template-columns:92px 1fr;
-    gap:16px;
-    padding:12px 0;
-    border-top:1px solid var(--line);
-    font-size:14.5px;
-  }
-  .talk-row:first-child{ border-top:none; padding-top:0; }
-  .talk-row .when{ font-size:13px; color:var(--ink-faint); }
-  .talk-row .where{ color:var(--ink-soft); }
 
   /* ---- mobile topbar + menu ---- */
   .mobile-topbar{
@@ -251,7 +238,7 @@
     main{ padding:32px 16px 80px; }
     header.masthead img{ width:56px; height:56px; }
     header.masthead h1{ font-size:17.5px; }
-    .row, .talk-row{ grid-template-columns:1fr; gap:4px; }
+    .row{ grid-template-columns:1fr; gap:4px; }
   }
 </style>
 
@@ -302,46 +289,46 @@
       <div class="label">Experience</div>
 
       <div class="row">
-        <div class="when">2026 &mdash; Now<span class="place">San Francisco</span></div>
+        <div class="when">2026 &mdash; Now</div>
         <div class="what">
           <div class="role">Co-Founder</div>
-          <div class="org"><a href="https://futurekind.design" target="_blank" rel="noopener">Futurekind</a></div>
+          <div class="org"><a href="https://futurekind.design" target="_blank" rel="noopener">Futurekind</a>, San Francisco, CA</div>
           <div class="blurb">An innovation strategy &amp; design consultancy helping organizations build for what's next.</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="when">2024 &mdash; 2026<span class="place">San Francisco</span></div>
+        <div class="when">2024 &mdash; 2026</div>
         <div class="what">
           <div class="role">Senior Product Designer</div>
-          <div class="org"><a href="https://www.headspace.com" target="_blank" rel="noopener">Headspace</a></div>
+          <div class="org"><a href="https://www.headspace.com" target="_blank" rel="noopener">Headspace</a>, San Francisco, CA</div>
           <div class="blurb">Reimagining the care experience for patients and providers.</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="when">2022 &mdash; 2024<span class="place">San Francisco</span></div>
+        <div class="when">2022 &mdash; 2024</div>
         <div class="what">
           <div class="role">Senior Experience Designer</div>
-          <div class="org"><a href="https://www.whipsaw.com" target="_blank" rel="noopener">Whipsaw</a></div>
+          <div class="org"><a href="https://www.whipsaw.com" target="_blank" rel="noopener">Whipsaw</a>, San Francisco, CA</div>
           <div class="blurb">Designer working across digital &times; physical products with a participatory design approach.</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="when">2021<span class="place">Pittsburgh</span></div>
+        <div class="when">2021</div>
         <div class="what">
           <div class="role">Design Researcher</div>
-          <div class="org"><a href="https://morphingmatter.org" target="_blank" rel="noopener">Morphing Matter Lab</a>, CMU HCII</div>
+          <div class="org"><a href="https://morphingmatter.org" target="_blank" rel="noopener">Morphing Matter Lab</a>, CMU HCII, Pittsburgh, PA</div>
           <div class="blurb">Design researcher working on restoring seagrass meadow ecosystems.</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="when">2018 &mdash; 2021<span class="place">Atlanta</span></div>
+        <div class="when">2018 &mdash; 2021</div>
         <div class="what">
           <div class="role">UX &amp; Visual Designer</div>
-          <div class="org"><a href="https://www.calendly.com" target="_blank" rel="noopener">Calendly</a></div>
+          <div class="org"><a href="https://www.calendly.com" target="_blank" rel="noopener">Calendly</a>, Atlanta, GA</div>
           <div class="blurb">Early design hire working across the marketing website and core product.</div>
         </div>
       </div>
@@ -350,34 +337,94 @@
     <section id="education">
       <div class="label">Education</div>
       <div class="row">
-        <div class="when">2020 &mdash; 2021<span class="place">Pittsburgh, PA</span></div>
+        <div class="when">2020 &mdash; 2021</div>
         <div class="what">
           <div class="role">Master of Human-Computer Interaction</div>
-          <div class="org">Carnegie Mellon University</div>
+          <div class="org">Carnegie Mellon University, Pittsburgh, PA</div>
         </div>
       </div>
     </section>
 
     <section id="writing">
       <div class="label">Writing</div>
-      <div class="talk-row"><div class="when">2022</div><div class="where"><a href="writing/design-ethos-and-values.html">Design Ethos &amp; Values</a> &mdash; Essay</div></div>
+      <div class="row">
+        <div class="when">2022</div>
+        <div class="what">
+          <div class="role"><a href="writing/design-ethos-and-values.html">Design Ethos &amp; Values</a></div>
+          <div class="org">Essay</div>
+        </div>
+      </div>
     </section>
 
     <section id="publications">
       <div class="label">Publications</div>
-      <div class="talk-row"><div class="when">2022</div><div class="where"><a href="https://arxiv.org/abs/2201.12200" target="_blank" rel="noopener">Blue Ceramics: Co-designing Morphing Ceramics for Seagrass Meadow Restoration</a> &mdash; Creativity &amp; Cognition, Pictorial</div></div>
-      <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://dl.acm.org/doi/10.1145/3491101.3519798" target="_blank" rel="noopener">Memory Portal: Investigating Data Meaning-making through Spatio-temporal Experiences</a> &mdash; CHI, Late-Breaking Work</div></div>
-      <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://link.springer.com/chapter/10.1007/978-981-19-4472-7_244" target="_blank" rel="noopener">Envisioning New Futuring Models: Past, Plurality, and Positionality</a> &mdash; IASDR, Late-Breaking Work</div></div>
+      <div class="row">
+        <div class="when">2022</div>
+        <div class="what">
+          <div class="role"><a href="https://arxiv.org/abs/2201.12200" target="_blank" rel="noopener">Blue Ceramics: Co-designing Morphing Ceramics for Seagrass Meadow Restoration</a></div>
+          <div class="org">Creativity &amp; Cognition, Pictorial, Venice, Italy</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2021</div>
+        <div class="what">
+          <div class="role"><a href="https://dl.acm.org/doi/10.1145/3491101.3519798" target="_blank" rel="noopener">Memory Portal: Investigating Data Meaning-making through Spatio-temporal Experiences</a></div>
+          <div class="org">CHI, Late-Breaking Work</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2021</div>
+        <div class="what">
+          <div class="role"><a href="https://link.springer.com/chapter/10.1007/978-981-19-4472-7_244" target="_blank" rel="noopener">Envisioning New Futuring Models: Past, Plurality, and Positionality</a></div>
+          <div class="org">IASDR, Late-Breaking Work</div>
+        </div>
+      </div>
     </section>
 
     <section id="speaking">
       <div class="label">Speaking</div>
-      <div class="talk-row"><div class="when">2026</div><div class="where"><a href="https://youtu.be/tvaeiwfwQAI?si=cKVEgJDfLk7nWTJ1" target="_blank" rel="noopener">How Headspace Designers Use AI</a> &mdash; Future London Academy</div></div>
-      <div class="talk-row"><div class="when">2025<span class="place">San Francisco, CA</span></div><div class="where"><a href="https://designbayarea.org/april-25-healing-by-design-how-designers-are-reimagining-care-hosted-by-whipsaw/" target="_blank" rel="noopener">Healing by Design: How Designers are Reimagining Care</a> &mdash; Whipsaw</div></div>
-      <div class="talk-row"><div class="when">2022<span class="place">Pittsburgh, PA</span></div><div class="where">Evoking the World You Want to Build: Engaging People in Future Visions &mdash; Pittsburgh Racial Justice Summit</div></div>
-      <div class="talk-row"><div class="when">2021<span class="place">Pittsburgh, PA</span></div><div class="where"><a href="https://morphingmatter.squarespace.com/blue-ceramics" target="_blank" rel="noopener">Nature-Centered Design</a> &mdash; Morphing Matter Lab</div></div>
-      <div class="talk-row"><div class="when">2021<span class="place">TU Delft, Netherlands</span></div><div class="where"><a href="https://rsdsymposium.org/reimagining-the-futures-cone-past-plurality-and-perspective/" target="_blank" rel="noopener">Reimagining the Futures Cone</a> &mdash; RSD10</div></div>
-      <div class="talk-row"><div class="when">2020<span class="place">Atlanta, GA</span></div><div class="where">Ceramics x Product: Design Through Iteration &mdash; AMUX (UX Meetup)</div></div>
+      <div class="row">
+        <div class="when">2026</div>
+        <div class="what">
+          <div class="role"><a href="https://youtu.be/tvaeiwfwQAI?si=cKVEgJDfLk7nWTJ1" target="_blank" rel="noopener">How Headspace Designers Use AI</a></div>
+          <div class="org">Future London Academy</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2025</div>
+        <div class="what">
+          <div class="role"><a href="https://designbayarea.org/april-25-healing-by-design-how-designers-are-reimagining-care-hosted-by-whipsaw/" target="_blank" rel="noopener">Healing by Design: How Designers are Reimagining Care</a></div>
+          <div class="org">Whipsaw, San Francisco, CA</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2022</div>
+        <div class="what">
+          <div class="role">Evoking the World You Want to Build: Engaging People in Future Visions</div>
+          <div class="org">Pittsburgh Racial Justice Summit, Pittsburgh, PA</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2021</div>
+        <div class="what">
+          <div class="role"><a href="https://morphingmatter.squarespace.com/blue-ceramics" target="_blank" rel="noopener">Nature-Centered Design</a></div>
+          <div class="org">Morphing Matter Lab, Pittsburgh, PA</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2021</div>
+        <div class="what">
+          <div class="role"><a href="https://rsdsymposium.org/reimagining-the-futures-cone-past-plurality-and-perspective/" target="_blank" rel="noopener">Reimagining the Futures Cone</a></div>
+          <div class="org">RSD10, TU Delft, Netherlands</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2020</div>
+        <div class="what">
+          <div class="role">Ceramics x Product: Design Through Iteration</div>
+          <div class="org">AMUX (UX Meetup), Atlanta, GA</div>
+        </div>
+      </div>
     </section>
   </main>
 </div>

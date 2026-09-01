@@ -48,12 +48,12 @@
   a{ color:var(--link); }
 
   .shell{
-    max-width:1120px;
+    max-width:1280px;
     margin:0 auto;
     padding:0 24px;
     display:grid;
-    grid-template-columns:180px minmax(0,600px);
-    gap:64px;
+    grid-template-columns:1fr 3fr;
+    gap:48px;
     align-items:start;
   }
   @media (max-width:920px){
@@ -112,7 +112,7 @@
   }
   .rail .theme-toggle:hover{ color:var(--ink); }
 
-  main{ min-width:0; padding:88px 0 140px; }
+  main{ min-width:0; max-width:660px; padding:88px 0 140px; }
 
   header.masthead{
     display:flex;
@@ -160,14 +160,9 @@
   #about p:last-child{ margin-bottom:0; }
   #about a{ text-decoration-color:var(--line); }
 
-  .ethos{
-    margin-top:32px;
-    padding-top:28px;
-    border-top:1px solid var(--line);
-  }
-  .ethos .ethos-intro{ color:var(--ink-soft); max-width:56ch; margin:0 0 14px; }
-  .ethos .ethos-intro:last-of-type{ margin-bottom:0; }
-  .principle{ margin-top:26px; }
+  .ethos-intro{ color:var(--ink-soft); max-width:56ch; margin:0 0 14px; }
+  .principle{ margin-top:26px; padding-top:26px; border-top:1px solid var(--line); }
+  .principle:first-of-type{ margin-top:32px; }
   .principle .num{
     font-size:11.5px;
     color:var(--ink-faint);
@@ -218,33 +213,6 @@
   .row .what .org{ color:var(--ink-soft); font-size:14.5px; margin-top:1px; }
   .row .what .blurb{ color:var(--ink-soft); font-size:14.5px; margin-top:8px; max-width:46ch; }
 
-  .stat-band{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
-    margin:20px 0 24px;
-  }
-  @media (max-width:480px){ .stat-band{ grid-template-columns:1fr; } }
-  .stat-band .stat{ background:var(--bg); padding:18px 16px; }
-  .stat-band .num{ font-size:26px; font-weight:600; letter-spacing:-0.01em; }
-  .stat-band .stat-label{ margin-top:6px; font-size:12.5px; color:var(--ink-soft); line-height:1.4; }
-
-  .project-meta{ font-size:13px; color:var(--ink-faint); margin-bottom:6px; }
-  .project-title{ font-size:17px; font-weight:600; margin-bottom:14px; }
-  #projects p{ color:var(--ink-soft); max-width:54ch; }
-
-  .phase{ padding:16px 0; border-top:1px solid var(--line); }
-  .phase:first-of-type{ border-top:1px solid var(--line); margin-top:8px; }
-  .phase-name{ font-size:12.5px; color:var(--ink-faint); margin-bottom:3px; }
-  .phase-title{ font-weight:600; font-size:14.5px; margin-bottom:8px; }
-  .phase ul{ margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px; }
-  .phase li{ margin-bottom:6px; }
-  .phase li:last-child{ margin-bottom:0; }
-
   .talk-row{
     display:grid;
     grid-template-columns:92px 1fr;
@@ -265,15 +233,6 @@
   .pub .title a{ text-decoration:none; }
   .pub .title a:hover{ text-decoration:underline; }
 
-  .empty-note{
-    font-size:13.5px;
-    color:var(--ink-faint);
-    border:1px dashed var(--line);
-    border-radius:6px;
-    padding:14px 16px;
-    max-width:50ch;
-  }
-
   .edu-row{ display:flex; justify-content:space-between; gap:20px; }
   @media (max-width:480px){ .edu-row{ flex-direction:column; gap:4px; } }
   .edu-row .school{ font-weight:600; font-size:15px; }
@@ -285,13 +244,10 @@
   <nav class="rail" aria-label="Section index">
     <a href="#about" data-section="about">About</a>
     <a href="#experience" data-section="experience">Work Experience</a>
-    <a href="#projects" data-section="projects">Projects</a>
     <a href="#education" data-section="education">Education</a>
     <a href="#writing" data-section="writing">Writing</a>
     <a href="#publications" data-section="publications">Publications</a>
     <a href="#speaking" data-section="speaking">Speaking</a>
-    <a href="#awards" data-section="awards">Awards</a>
-    <a href="#press" data-section="press">Press</a>
     <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
   </nav>
 
@@ -309,33 +265,6 @@
       <p>I visualize complex systems to ready them for transformation. Across a decade of experience designing and shipping complex products and services across AI, healthcare, medtech, robotics, and scientific instrumentation, my expertise is defining how emerging technology can fit naturally into people's lives, and shift the future.</p>
       <p>San Francisco, CA &nbsp;&middot;&nbsp; <a href="mailto:rachelarre@gmail.com">rachelarre@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://linkedin.com/in/rachelarre">linkedin.com/rachelarre</a></p>
       <p>Participatory Design &middot; Speculative Futures &middot; Co-creation &middot; 0&rarr;1 Product Development</p>
-
-      <div class="ethos">
-        <div class="label">Design Ethos &amp; Values</div>
-        <p class="ethos-intro">Designers are conduits to power. We are translators between how things are and how they could be. As a systems thinker, I thrive in diving into the ambiguity, finding the patterns, and understanding how they all connect to design more equitable outcomes for all stakeholders.</p>
-        <p class="ethos-intro">My design ethos weaves these values with wisdom I've gathered from my favorite writers and thinkers.</p>
-
-        <div class="principle">
-          <div class="num">Principle 01</div>
-          <h3>Design for Ethical Disruption</h3>
-          <p>I will use my skills as a designer to contribute to the larger conversation around bettering the tools and products we use for living, connecting, and simply being human.</p>
-          <blockquote>"Our task is to make trouble, to stir up potent response to devastating events, as well as to settle troubled waters and rebuild quiet places."<cite>&mdash; Donna J. Haraway, <em>Staying with the Trouble</em></cite></blockquote>
-        </div>
-
-        <div class="principle">
-          <div class="num">Principle 02</div>
-          <h3>Scope Through Emergence</h3>
-          <p>I will pay deep attention to the details of what is being considered and what is being left out, and who holds the power. When unfolding a problem, I create opportunities to experiment, play, and create space so the solution draws on past wisdom for better futures.</p>
-          <blockquote>"To apply natural order and our love of life to the way we create the world. To tap into the most ancient systems and patterns for wisdom as we build tomorrow."<cite>&mdash; Adrienne Marie Brown, <em>Emergent Strategy</em></cite></blockquote>
-        </div>
-
-        <div class="principle">
-          <div class="num">Principle 03</div>
-          <h3>Beauty Through Utility</h3>
-          <p>I weave beauty into the functionality as part of creating accessible, equitable design. I measure success by how the outcome fits seamlessly into the context of everyday life.</p>
-          <blockquote>"When the objects we use every day and the surroundings we live in have become in themselves a work of art, then we shall be able to say that we have achieved a balanced life."<cite>&mdash; Bruno Munari, <em>Design as Art</em></cite></blockquote>
-        </div>
-      </div>
     </section>
 
     <section id="experience">
@@ -387,47 +316,6 @@
       </div>
     </section>
 
-    <section id="projects">
-      <div class="label">Projects</div>
-
-      <div class="project-meta">UX Designer &amp; Researcher &middot; via Whipsaw &middot; Mar&ndash;Aug 2023, ongoing engagement</div>
-      <div class="project-title">Charting a New Experience for Contact Lens Wearers</div>
-
-      <div class="stat-band">
-        <div class="stat"><div class="num">30%</div><div class="stat-label">of new contact lens wearers don't make it past the first 30 days of use</div></div>
-        <div class="stat"><div class="num">7%</div><div class="stat-label">make it to a full year of use</div></div>
-        <div class="stat"><div class="num">6%</div><div class="stat-label">annual growth in global vision-correction need</div></div>
-      </div>
-
-      <p>A contact lens industry that hadn't meaningfully changed in twenty years was failing to educate and support new wearers at exactly the moments they needed it most. From scoping the project proposal to delivering the final concept, I guided the team through a participatory-design-informed process to uncover unmet needs and develop product concepts that resonate with new wearers globally.</p>
-
-      <div class="phase">
-        <div class="phase-name">01 &mdash; Discover</div>
-        <div class="phase-title">Opportunity area definition</div>
-        <ul>
-          <li>Synthesized five years of prior research on new-wearer pain points to target the areas worth exploring</li>
-          <li>Ran a full-day, on-site stakeholder workshop using "Project in a Day" &mdash; walking client and design teams through the entire project scope together to build cross-functional alignment</li>
-          <li>Surfaced three guiding themes: set expectations before the first visit, give eye care providers better tools, deliver education where the patient already is</li>
-        </ul>
-      </div>
-      <div class="phase">
-        <div class="phase-name">02 &mdash; Dream</div>
-        <div class="phase-title">Co-creation workshops</div>
-        <ul>
-          <li>Held three rounds of co-creation workshops with new contact lens wearers and eye care professionals</li>
-          <li>Ran paired ideation sessions where participants and designers built solutions to top needs together, not for them</li>
-        </ul>
-      </div>
-      <div class="phase">
-        <div class="phase-name">03 &mdash; Develop</div>
-        <div class="phase-title">User flows &amp; qualitative testing</div>
-        <ul>
-          <li>Defined a patient app experience spanning first-appointment booking, expectation-setting, interactive training, short-form video education, and telemedicine</li>
-          <li>Refined feature positioning through iterative wireframing, prototyping, and qualitative testing with end users and eye care professionals</li>
-        </ul>
-      </div>
-    </section>
-
     <section id="education">
       <div class="label">Education</div>
       <div class="edu-row">
@@ -441,7 +329,29 @@
 
     <section id="writing">
       <div class="label">Writing</div>
-      <div class="empty-note">Nothing published here yet &mdash; this is the spot for essays and personal writing, separate from the peer-reviewed work below.</div>
+      <p class="ethos-intro">Designers are conduits to power. We are translators between how things are and how they could be. As a systems thinker, I thrive in diving into the ambiguity, finding the patterns, and understanding how they all connect to design more equitable outcomes for all stakeholders.</p>
+      <p class="ethos-intro">My design ethos weaves these values with wisdom I've gathered from my favorite writers and thinkers.</p>
+
+      <div class="principle">
+        <div class="num">Principle 01</div>
+        <h3>Design for Ethical Disruption</h3>
+        <p>I will use my skills as a designer to contribute to the larger conversation around bettering the tools and products we use for living, connecting, and simply being human.</p>
+        <blockquote>"Our task is to make trouble, to stir up potent response to devastating events, as well as to settle troubled waters and rebuild quiet places."<cite>&mdash; Donna J. Haraway, <em>Staying with the Trouble</em></cite></blockquote>
+      </div>
+
+      <div class="principle">
+        <div class="num">Principle 02</div>
+        <h3>Scope Through Emergence</h3>
+        <p>I will pay deep attention to the details of what is being considered and what is being left out, and who holds the power. When unfolding a problem, I create opportunities to experiment, play, and create space so the solution draws on past wisdom for better futures.</p>
+        <blockquote>"To apply natural order and our love of life to the way we create the world. To tap into the most ancient systems and patterns for wisdom as we build tomorrow."<cite>&mdash; Adrienne Marie Brown, <em>Emergent Strategy</em></cite></blockquote>
+      </div>
+
+      <div class="principle">
+        <div class="num">Principle 03</div>
+        <h3>Beauty Through Utility</h3>
+        <p>I weave beauty into the functionality as part of creating accessible, equitable design. I measure success by how the outcome fits seamlessly into the context of everyday life.</p>
+        <blockquote>"When the objects we use every day and the surroundings we live in have become in themselves a work of art, then we shall be able to say that we have achieved a balanced life."<cite>&mdash; Bruno Munari, <em>Design as Art</em></cite></blockquote>
+      </div>
     </section>
 
     <section id="publications">
@@ -468,16 +378,6 @@
       <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://morphingmatter.squarespace.com/blue-ceramics" target="_blank" rel="noopener">Nature-Centered Design</a> &mdash; Morphing Matter Lab, Pittsburgh, PA</div></div>
       <div class="talk-row"><div class="when">2021</div><div class="where"><a href="https://rsdsymposium.org/reimagining-the-futures-cone-past-plurality-and-perspective/" target="_blank" rel="noopener">Reimagining the Futures Cone</a> &mdash; RSD10, TU Delft, Netherlands</div></div>
       <div class="talk-row"><div class="when">2020</div><div class="where">Ceramics x Product: Design Through Iteration &mdash; AMUX (UX Meetup), Atlanta, GA</div></div>
-    </section>
-
-    <section id="awards">
-      <div class="label">Awards</div>
-      <div class="empty-note">Nothing listed yet &mdash; add recognitions here as they come in.</div>
-    </section>
-
-    <section id="press">
-      <div class="label">Press</div>
-      <div class="empty-note">Nothing listed yet &mdash; add press mentions here as they come in.</div>
     </section>
   </main>
 </div>

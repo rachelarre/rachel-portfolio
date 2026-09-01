@@ -13,26 +13,6 @@
     --pill-bg: #f4f4f4;
     --link: #17171a;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg: #131314;
-      --ink: #f2f2f0;
-      --ink-soft: #a3a3a0;
-      --ink-faint: #717170;
-      --line: #2a2a2b;
-      --pill-bg: #1f1f20;
-      --link: #f2f2f0;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg: #131314;
-    --ink: #f2f2f0;
-    --ink-soft: #a3a3a0;
-    --ink-faint: #717170;
-    --line: #2a2a2b;
-    --pill-bg: #1f1f20;
-    --link: #f2f2f0;
-  }
 
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
@@ -95,20 +75,6 @@
     height:2px;
     background:var(--ink);
   }
-  .theme-toggle{
-    margin-top:28px;
-    align-self:flex-start;
-    font-family:inherit;
-    font-size:12.5px;
-    color:var(--ink-faint);
-    background:var(--pill-bg);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:6px 14px;
-    cursor:pointer;
-  }
-  .theme-toggle:hover{ color:var(--ink); }
-
   main{ min-width:0; max-width:660px; padding:88px 0 140px; }
 
   header.masthead{
@@ -223,7 +189,6 @@
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{ padding:10px 0; }
   .mobile-menu a::before{ display:none; }
-  .mobile-menu .theme-toggle{ margin-top:10px; align-self:flex-start; }
 
   /* ---- responsive ---- */
   @media (max-width:920px){
@@ -255,7 +220,6 @@
   <a href="#writing" data-section="writing">Writing</a>
   <a href="#publications" data-section="publications">Publications</a>
   <a href="#speaking" data-section="speaking">Speaking</a>
-  <button class="theme-toggle" type="button">Dark mode</button>
 </nav>
 
 <div class="shell">
@@ -266,7 +230,6 @@
     <a href="#writing" data-section="writing">Writing</a>
     <a href="#publications" data-section="publications">Publications</a>
     <a href="#speaking" data-section="speaking">Speaking</a>
-    <button class="theme-toggle" type="button">Dark mode</button>
   </nav>
 
   <main>
@@ -430,33 +393,6 @@
 </div>
 
 <script>
-(function(){
-  var root = document.documentElement;
-  var buttons = Array.prototype.slice.call(document.querySelectorAll('.theme-toggle'));
-  function systemTheme(){
-    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-  }
-  function updateLabel(){
-    var explicit = root.getAttribute('data-theme');
-    var effective = explicit || systemTheme();
-    var label = effective === 'dark' ? 'Light mode' : 'Dark mode';
-    buttons.forEach(function(b){ b.textContent = label; });
-  }
-  var stored = null;
-  try { stored = localStorage.getItem('rachel-theme'); } catch(e) {}
-  if(stored === 'light' || stored === 'dark'){ root.setAttribute('data-theme', stored); }
-  updateLabel();
-  buttons.forEach(function(b){
-    b.addEventListener('click', function(){
-      var current = root.getAttribute('data-theme') || systemTheme();
-      var next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('rachel-theme', next); } catch(e) {}
-      updateLabel();
-    });
-  });
-})();
-
 (function(){
   var menuBtn = document.getElementById('mobile-menu-btn');
   var menu = document.getElementById('mobile-menu');

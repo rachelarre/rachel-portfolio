@@ -13,8 +13,8 @@ Fonts: Inter (Google Fonts). Palette: near-black ink on white, minimal greys —
 ## Immediate next steps (in progress when this was handed off)
 
 1. ~~**Create a GitHub repo**~~ — Done. Repo is https://github.com/rachelarre/rachel-portfolio (public), existing git history pushed intact, default branch renamed `master` → `main` to match GitHub's current convention.
-2. **Connect Netlify** (Rachel has a Netlify account) and deploy the site from that GitHub repo, so pushes to `main` auto-deploy.
-3. **Point rachelarre.com at Netlify.** The domain is currently on Flywheel/WordPress. Rachel confirmed she wants to fully replace the WordPress site (not run them side by side) and manage DNS through Flywheel's DNS settings, pointing to Netlify.
+2. ~~**Connect Netlify**~~ — Done. Site is https://rachelarre.netlify.app (Netlify site name `rachelarre`, project ID `36b01a2e-06fc-42fb-a390-754c4f4227b6`), linked to the GitHub repo via a deploy key (not the GitHub App/OAuth — Netlify's SSH-based git integration) plus a GitHub webhook (`https://api.netlify.com/hooks/github`, events: push/pull_request/delete) that triggers builds. Pushes to `main` auto-deploy — verified working. No build command needed; publish directory is the repo root (`.`) since this is a static site.
+3. **Point rachelarre.com at Netlify.** The domain is currently on Flywheel/WordPress. Rachel confirmed she wants to fully replace the WordPress site (not run them side by side) and manage DNS through Flywheel's DNS settings, pointing to Netlify. Once ready, add the custom domain in Netlify (Site settings → Domain management) and update DNS at Flywheel accordingly.
 4. Once both pages are hosted together under one domain, the relative link from the Writing section to `writing/design-ethos-and-values.html` (and the "back" link from that page to `../index.html`) will resolve correctly — right now, as two separate published previews, they don't link to each other. This is expected and not a bug.
 
 ## Content source of truth
